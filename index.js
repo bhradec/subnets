@@ -40,7 +40,7 @@ function generateSubnetInputTable(numOfSubnets) {
 generateSubnetInputTable(numOfSubnetsInput.value);
 
 /* Adds or removes a table row on subnet number change */
-numOfSubnetsInput.onchange = function () {
+numOfSubnetsInput.onchange = () => {
     let numOfSubnets = numOfSubnetsInput.value;
     
     if (numOfSubnets < currentRow) {
@@ -50,7 +50,7 @@ numOfSubnetsInput.onchange = function () {
     }
 }
 
-calculateButton.onclick = function () {
+calculateButton.onclick = () => {
     let subnetNameInputs = document.getElementsByClassName("subnetNameInput");
     let numOfHostsInputs = document.getElementsByClassName("numOfHostsInput")
 
@@ -60,11 +60,20 @@ calculateButton.onclick = function () {
     for (i = 0; i < subnetNameInputs.length; i++) {
         subnetInputData.push({
             subnetName: subnetNameInputs[i].value, 
-            numOfHosts: numOfHostsInputs[i].value
+            numOfHosts: Number(numOfHostsInputs[i].value)
         });
     }
 
+    /* sort subnetInputData by number of hosts descending */
+    subnetInputData.sort((a, b) => {
+        if (a.numOfHosts > b.numOfHosts) {
+            return -1;
+        } else {
+            return 1;
+        }
+    })
+
     for (const dataobject of subnetInputData) {
-        console.log(dataobject);
+        console.log(dataobject.numOfHosts);
     }    
 }
