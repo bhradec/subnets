@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 80%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+main {
+    width: 80%;
+    margin: 10px auto;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    display: block;
+    margin: 20px auto;
+}
+
+#dataInputForm {
+    width: 20%;
+    display: block;
+    clear: both;
+    margin: 20px auto;
+}
+
+#dataInputForm label, input{
+    width: 100%;
+    display: block;
+}
+
+#dataInputForm input {
+    height: 25px;
+    padding: 5px;
+}
+
+#subnetInputForm {
+    width: 40%;
+    display: block;
+    margin: 10px auto;
+}
+
+#subnetInputForm input {
+    box-sizing: border-box;
+    height: 25px;
+    padding: 5px;
+    border: 0px;
+}
+
+#subnetInputForm table {
+    box-sizing: border-box;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#subnetInputForm td {
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
