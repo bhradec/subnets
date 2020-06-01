@@ -86,11 +86,14 @@ function validateIpAddressCIDR(ipAddresCIDR) {
 /* Adds or removes a table row on subnet number change */
 numOfSubnetsInput.onchange = () => {
     let numOfSubnets = numOfSubnetsInput.value;
-    
-    if (numOfSubnets < currentRow) {
-        removeInputTableRow();
-    } else if (numOfSubnets > currentRow) {
-        addInputTableRow();
+    let errorSpan = document.getElementById("numOfSubnetsError");
+
+    if (numOfSubnets <= 0) {
+        errorSpan.innerHTML = "Invalid number of subnets"
+    } else {
+        errorSpan.innerHTML = "";
+        if (numOfSubnets < currentRow) removeInputTableRow();
+        else if (numOfSubnets > currentRow) addInputTableRow();
     }
 }
 
@@ -99,7 +102,7 @@ calculateButton.onclick = () => {
 
     if(validateIpAddressCIDR(networkAddress) == false) {
         let errorSpan = document.getElementById("networkAddressError");
-        errorSpan.innerHTML = "Invalid IPv4 address!";
+        errorSpan.innerHTML = "Invalid IPv4 address";
     }
 
     let subnetNameInputs = document.getElementsByClassName("subnetNameInput");
@@ -122,7 +125,6 @@ calculateButton.onclick = () => {
     })
 
     // caluculateSubnets(subnetInputData, networkAddress);
-
 }
 
 /* Generates input table for the default number of subnets */
