@@ -14,8 +14,10 @@
             <form id="dataInputForm">
                 <label for="networkAddress">Network address</label>
                 <input type="text" name="networkAddress" id="networkAddress" placeholder="192.168.1.1/24">
+                <span id="networkAddressError" class="error"></span>
                 <label class for="numOfSubnets">Number of subnets</label>
-                <input type="number" name="numOfSubnets" id="numOfSubnets" value="5"> 
+                <input type="number" name="numOfSubnets" id="numOfSubnets" value="5">
+                <span id="numOfSubnetsError" class="error"></span> 
             </form>
             <form id="subnetInputForm">
                 <!-- table is created in javascript -->

@@ -24,6 +24,11 @@ button {
     margin: 20px auto;
 }
 
+.error {
+    color: red;
+    font-style: italic;
+}
+
 #dataInputForm {
     width: 20%;
     display: block;
