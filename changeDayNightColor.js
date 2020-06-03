@@ -1,6 +1,13 @@
 const LIGHT_MODE = 1;
 const DARK_MODE = 0;
 
+const DARK_BACKGROUND = "#0f111a";
+const DARK_INPUT = "#1a1c25";
+const DARK_BORDER = "#8e70bd";
+const DARK_FOREGROUND = "#ffffff"
+const DARK_ACCENT_1 = "#8bb265"
+const DARK_ACCENT_2 = "#528bc8"
+
 var currentColorMode = LIGHT_MODE;
 
 function changeColor() {
@@ -19,6 +26,7 @@ function setColor() {
     var buttons = document.querySelectorAll("button");
 
     if (currentColorMode == LIGHT_MODE) {
+        // reset colors to default css values
         document.body.style.backgroundColor = "";
         
         for (h1 of h1s) h1.style.color = "";
@@ -39,24 +47,24 @@ function setColor() {
             button.style.borderColor = "";
         }
     } else if (currentColorMode == DARK_MODE) {
-        document.body.style.backgroundColor = "black";
+        document.body.style.backgroundColor = DARK_BACKGROUND;
         
-        for (h1 of h1s) h1.style.color = "white";
-        for(label of labels) label.style.color = "white";
+        for (h1 of h1s) h1.style.color = DARK_FOREGROUND;
+        for(label of labels) label.style.color = DARK_FOREGROUND;
 
         for(input of inputs){
-            input.style.color = "white";
-            input.style.backgroundColor = "black";
-            input.style.borderColor = "white";
+            input.style.color = DARK_FOREGROUND;
+            input.style.backgroundColor = DARK_INPUT;
+            input.style.borderColor = DARK_BORDER;
         }
         
-        for(table of tables) table.style.color = "white";
-        for(td of tds) td.style.borderColor = "white";
+        for(table of tables) table.style.color = DARK_FOREGROUND;
+        for(td of tds) td.style.borderColor = DARK_BORDER;
 
         for(button of buttons){
-            button.style.color = "white";
-            button.style.backgroundColor = "black";
-            button.style.borderColor = "white";
+            button.style.color = DARK_FOREGROUND;
+            button.style.backgroundColor = DARK_INPUT;
+            button.style.borderColor = DARK_BORDER;
         }
     }
 }
