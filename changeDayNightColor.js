@@ -6,7 +6,7 @@ const DARK_INPUT = "#1a1c25";
 const DARK_BORDER = "#8e70bd";
 const DARK_FOREGROUND = "#ffffff"
 const DARK_ACCENT_1 = "#8bb265"
-const DARK_ACCENT_2 = "#528bc8"
+const DARK_ACCENT_2 = "#43a58f"
 
 var currentColorMode = LIGHT_MODE;
 
@@ -49,7 +49,7 @@ function setColor() {
     } else if (currentColorMode == DARK_MODE) {
         document.body.style.backgroundColor = DARK_BACKGROUND;
         
-        for (h1 of h1s) h1.style.color = DARK_FOREGROUND;
+        for (h1 of h1s) h1.style.color = DARK_ACCENT_2;
         for(label of labels) label.style.color = DARK_FOREGROUND;
 
         for(input of inputs){

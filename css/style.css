@@ -20,6 +20,10 @@ header {
     height: 80px;
 }
 
+h1 {
+    color: #43a58f;
+}
+
 main {
     display: flex;
     flex-direction: column;
