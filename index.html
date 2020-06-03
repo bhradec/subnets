@@ -9,16 +9,13 @@
     <title>VLSM calculator</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- import functions -->
     <script src="ipv4.js"></script>
     <script src="changeDayNightColor.js"></script>
 </head>
 <body>
-    <form>
-        <button type="button" id="changeDayNightColor" style="position: fixed; top: 10px; left: 10px;">ChangeDayNightColor</button>
-    </form>
-
     <header>
         <h1>VLSM subnet calculator</h1>
     </header>
@@ -47,6 +44,12 @@
             <table id="resultTable"></table>
         </section>
     </main>
+    <footer>
+        <button type="button" id="changeDayNightColor">
+            <div>Change Theme</div>
+            <i class="fa fa-moon-o"></i>
+        </button>
+    </footer>
     <!-- main script -->
     <script src="index.js"></script>
 </body>

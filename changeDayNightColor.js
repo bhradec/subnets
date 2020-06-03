@@ -55,6 +55,7 @@ function setColor() {
         for(i = 0; i < input.length; i++){
             input[i].style.color = "white";
             input[i].style.backgroundColor = "black";
+            input[i].style.borderColor = "white";
         }
         
         var table = document.querySelectorAll("table");
@@ -71,6 +72,7 @@ function setColor() {
         for(i = 0; i < button.length; i++){
             button[i].style.color = "white";
             button[i].style.backgroundColor = "black";
+            button[i].style.borderColor = "white";
         }
     }
 }
