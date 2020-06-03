@@ -87,13 +87,22 @@ function validateIpAddressCIDR(ipAddresCIDR) {
 numOfSubnetsInput.onchange = () => {
     let numOfSubnets = numOfSubnetsInput.value;
     let errorSpan = document.getElementById("numOfSubnetsError");
+    rowsBeforeChange = currentRow;
 
     if (numOfSubnets <= 0) {
-        errorSpan.innerHTML = "Invalid number of subnets"
+        document.getElementById("numOfSubnets").value = 0;
+        errorSpan.innerHTML = "Invalid number of subnets";
     } else {
         errorSpan.innerHTML = "";
-        if (numOfSubnets < currentRow) removeInputTableRow();
-        else if (numOfSubnets > currentRow) addInputTableRow();
+        if (numOfSubnets < currentRow) {
+            for (i = 0; i < rowsBeforeChange - numOfSubnets; i++) {
+                removeInputTableRow();        
+            }
+        } else if (numOfSubnets > currentRow) {
+            for (i = 0; i < numOfSubnets - rowsBeforeChange; i++) {
+                addInputTableRow();        
+            }
+        }
     }
 }
 
