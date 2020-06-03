@@ -2,6 +2,7 @@ var networkAddressInput = document.getElementById("networkAddress");
 var subnetInputTable = document.getElementById("subnetInputTable");
 var numOfSubnetsInput = document.getElementById("numOfSubnets");
 var calculateButton = document.getElementById("calculate");
+var changeDayNightColorButton = document.getElementById("changeDayNightColor");
 var currentRow = 0;
 
 /**
@@ -103,6 +104,10 @@ calculateButton.onclick = () => {
     })
 
     // caluculateSubnets(subnetInputData, networkAddress);
+}
+
+changeDayNightColorButton.onclick = function(event) {
+    changeColor();
 }
 
 /* Generates input table for the default number of subnets */

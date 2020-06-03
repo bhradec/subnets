@@ -1,4 +1,3 @@
-var changeDayNightColorButton = document.getElementById("changeDayNightColor");
 currentColorMode = 0;
 
 function changeColor() {
@@ -74,8 +73,4 @@ function setColor() {
             button[i].style.backgroundColor = "black";
         }
     }
-}
-
-changeDayNightColorButton.onclick = function(event) {
-    changeColor();
 }
