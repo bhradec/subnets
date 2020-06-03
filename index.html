@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>VLSM calculator</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- import functions -->
+    <script src="ipv4.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +22,7 @@
                 <span id="numOfSubnetsError" class="error"></span> 
             </form>
             <form id="subnetInputForm">
-                <!-- table is created in javascript -->
+                <!-- table is created in index.js -->
                 <table id="subnetInputTable">
                     <tr>
                         <th>Subnet name</th>
@@ -34,6 +36,7 @@
             <table id="resultTable"></table>
         </section>
     </main>
+    <!-- main script -->
     <script src="index.js"></script>
 </body>
 </html>
