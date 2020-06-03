@@ -67,6 +67,10 @@ numOfSubnetsInput.onchange = () => {
             for (i = 0; i < numOfSubnets - rowsBeforeChange; i++) {
                 addInputTableRow();        
             }
+
+            /* Sets the colors of the new rows,
+               the function is located in changeDayNightColor.js */
+            setColor();
         }
     }
 }
