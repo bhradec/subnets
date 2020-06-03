@@ -1,78 +1,62 @@
-currentColorMode = 0;
+const LIGHT_MODE = 1;
+const DARK_MODE = 0;
+
+var currentColorMode = LIGHT_MODE;
 
 function changeColor() {
-    if (currentColorMode == 0) currentColorMode = 1;
-    else if (currentColorMode == 1) currentColorMode = 0;
+    if (currentColorMode == LIGHT_MODE) currentColorMode = DARK_MODE;
+    else if (currentColorMode == DARK_MODE) currentColorMode = LIGHT_MODE;
 
     setColor();
 }
 
 function setColor() {
-    if (currentColorMode == 0) {
-        document.body.style.backgroundColor = "white";
+    var h1s = document.querySelectorAll("h1");
+    var labels = document.querySelectorAll("label");
+    var inputs = document.querySelectorAll("input");
+    var tables = document.querySelectorAll("table");
+    var tds = document.querySelectorAll("td");
+    var buttons = document.querySelectorAll("button");
 
-        var h1 = document.querySelectorAll("h1");
-        h1[0].style.color = "black";
+    if (currentColorMode == LIGHT_MODE) {
+        document.body.style.backgroundColor = "";
+        
+        for (h1 of h1s) h1.style.color = "";
+        for(label of labels) label.style.color = "";
 
-        var label = document.querySelectorAll("label");
-        for(i = 0; i < label.length; i++){
-            label[i].style.color = "black";
-        }
-
-        var input = document.querySelectorAll("input");
-        for(i = 0; i < input.length; i++){
-            input[i].style.color = "black";
-            input[i].style.backgroundColor = "white";
+        for(input of inputs){
+            input.style.color = "";
+            input.style.backgroundColor = "";
+            input.style.borderColor = "";
         }
         
-        var table = document.querySelectorAll("table");
-        for(i = 0; i < table.length; i++){
-            table[i].style.color = "black";
-        }
+        for(table of tables) table.style.color = "";
+        for(td of tds) td.style.borderColor = "";
 
-        var td = document.querySelectorAll("td");
-        for(i = 0; i < td.length; i++){
-            td[i].style.borderColor = "black";
+        for(button of buttons){
+            button.style.color = "";
+            button.style.backgroundColor = "";
+            button.style.borderColor = "";
         }
-
-        var button = document.querySelectorAll("button");
-        for(i = 0; i < button.length; i++){
-            button[i].style.color = "buttontext";
-            button[i].style.backgroundColor = "buttonface";
-        }
-    } else if (currentColorMode == 1) {
+    } else if (currentColorMode == DARK_MODE) {
         document.body.style.backgroundColor = "black";
+        
+        for (h1 of h1s) h1.style.color = "white";
+        for(label of labels) label.style.color = "white";
 
-        var h1 = document.querySelectorAll("h1");
-        h1[0].style.color = "white";
-
-        var label = document.querySelectorAll("label");
-        for(i = 0; i < label.length; i++){
-            label[i].style.color = "white";
-        }
-
-        var input = document.querySelectorAll("input");
-        for(i = 0; i < input.length; i++){
-            input[i].style.color = "white";
-            input[i].style.backgroundColor = "black";
-            input[i].style.borderColor = "white";
+        for(input of inputs){
+            input.style.color = "white";
+            input.style.backgroundColor = "black";
+            input.style.borderColor = "white";
         }
         
-        var table = document.querySelectorAll("table");
-        for(i = 0; i < table.length; i++){
-            table[i].style.color = "white";
-        }
+        for(table of tables) table.style.color = "white";
+        for(td of tds) td.style.borderColor = "white";
 
-        var td = document.querySelectorAll("td");
-        for(i = 0; i < td.length; i++){
-            td[i].style.borderColor = "white";
-        }
-
-        var button = document.querySelectorAll("button");
-        for(i = 0; i < button.length; i++){
-            button[i].style.color = "white";
-            button[i].style.backgroundColor = "black";
-            button[i].style.borderColor = "white";
+        for(button of buttons){
+            button.style.color = "white";
+            button.style.backgroundColor = "black";
+            button.style.borderColor = "white";
         }
     }
 }
