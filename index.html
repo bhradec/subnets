@@ -15,6 +15,7 @@
     <!-- import functions -->
     <script src="ipv4.js"></script>
     <script src="changeDayNightColor.js"></script>
+    <script src="translations.js"></script>
 </head>
 <body>
     <header>
@@ -38,10 +39,10 @@
     <main>
         <section>
             <form id="dataInputForm">
-                <label for="networkAddress">Network address</label>
+                <label for="networkAddress" id="networkAddressLabel">Network address</label>
                 <input type="text" name="networkAddress" id="networkAddress" placeholder="Ex: 192.168.1.1/24">
                 <span id="networkAddressError" class="error"></span>
-                <label class for="numOfSubnets">Number of subnets</label>
+                <label class for="numOfSubnets" id="numOfSubnetsLabel">Number of subnets</label>
                 <input type="number" name="numOfSubnets" id="numOfSubnets" value="5">
                 <span id="numOfSubnetsError" class="error"></span> 
             </form>
@@ -49,8 +50,8 @@
                 <!-- table is created in index.js -->
                 <table id="subnetInputTable">
                     <tr>
-                        <th>Subnet name</th>
-                        <th>Number of hosts</th>
+                        <th id="subnetNameTh">Subnet name</th>
+                        <th id="numberOfHostsTh">Number of hosts</th>
                     </tr>
                 </table> 
             </form>
@@ -62,9 +63,12 @@
     </main>
     <footer>
         <button type="button" id="changeDayNightColor">
-            <div>Change Theme</div>
+            <div id="changeTheme">Change Theme</div>
             <i class="fa fa-moon-o"></i>
         </button>
+        <div id="languageChange">
+            <button></button>
+        </div>
     </footer>
     <!-- main script -->
     <script src="index.js"></script>
