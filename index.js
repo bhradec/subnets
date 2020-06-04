@@ -100,10 +100,26 @@ calculateButton.onclick = () => {
     calculateSubnets(networkAddress, subnetInputData);
 }
 
-changeDayNightColorButton.onclick = function(event) {
+changeDayNightColorButton.onclick = () => {
     changeColor();
 }
 
+// Color scheme changes acording to system theme
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    changeColor();
+});
+
 /* Generates input table for the default number of subnets */
 generateSubnetInputTable(numOfSubnetsInput.value);
-//changeLanguage(RUSSIAN);
+
+document.getElementById("englishButton").onclick = () => {
+    changeLanguage(ENGLISH);
+};
+
+document.getElementById("russianButton").onclick = () => {
+    changeLanguage(RUSSIAN);
+};
+
+document.getElementById("chineseButton").onclick = () => {
+    changeLanguage(CHINESE);
+};

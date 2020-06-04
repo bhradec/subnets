@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Easy to use VLSM calculator for finding subnetwork addresses, network masks, broadcast addresses, number of hosts and usable ranges">
-    <meta name="keywords" content="VLSM, subnetworking, subnetting">
+    <meta name="keywords" content="VLSM, subnetworking, subnetting, subnet, calculator, ip, ipv4">
     <meta name="author" content="Bruno Hradec, Ivan Luka Špoljar, Antonio Jurešić">
 
     <title>VLSM calculator</title>
@@ -19,7 +19,7 @@
 </head>
 <body>
     <header>
-        <h1>VLSM subnet calculator</h1>
+        <h1 id="mainH1">VLSM subnet calculator</h1>
     </header>
 
     <aside>
@@ -62,19 +62,21 @@
         </section>
     </main>
     <footer>
-        <div id="languageChange">
-            <button id="englishButton">English</button>
-            <button id="Russian">Russian</button>
-            <button id="Chinese">Chinese</button>
+        <div id="leftButtons">
+            <button id="englishButton">EN</button>
+            <button id="russianButton">РУ</button>
+            <button id="chineseButton">中文</button>
         </div>
-        <div id="themeChange">
+        <div id="centerButtons">
             <button type="button" id="changeDayNightColor">
                 <div id="changeTheme">Change Theme</div>
                 <i class="fa fa-moon-o"></i>
             </button>
         </div>
-        <div id="socialMediaButtons">
-            <button>SocialMedia</button>
+        <div id="rightButtons">
+            <a href="about.html">
+                <button id="aboutButton">About</button>
+            </a>
         </div>
     </footer>
     <!-- main script -->

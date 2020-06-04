@@ -9,3 +9,4 @@ Easy to use VLSM calculator for finding subnetwork addresses, network masks, bro
 | index.js                | Main function                                    |
 | ipv4.js                 | Contains IPv4 functions (validation, ipv4 math)  |
 | changeDayNightColors.js | Contains dark and light theme functions          |
+| translation.js          | Contains translations to other languages         |

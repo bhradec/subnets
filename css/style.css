@@ -17,7 +17,9 @@ body {
 header {
     display: flex;
     justify-content: center;
-    height: 80px;
+    align-items: center;
+    background-color: #f3f3f3;
+    min-height: 50px;
 }
 
 h1 {
@@ -32,6 +34,7 @@ main {
     /* takes all remaining space that 
      * header and footer don't */
     flex: 1;
+    margin-top: 30px;
 }
 
 aside {
@@ -61,10 +64,16 @@ footer {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    background-color: #f3f3f3;
+    margin-top: 20px;
 }
 
 footer button {
     min-height: 30px;
+    margin-right: 2px;
+    margin-left: 2px;
+    border-color: #a5a5a5;
+    color: grey;
 }
 
 input {
@@ -88,6 +97,7 @@ button {
     border-radius: 4px;
     background-color: #f3f3f3;
     font-weight: bold;
+    cursor: pointer;
 }
 
 button:hover {
@@ -117,24 +127,23 @@ button:hover {
     min-height: 30px;
 }
 
-#languageChange {
+#leftButtons {
     flex: 1;
     display: flex;
     justify-content: flex-start;
 }
 
-#languageChange button {
-    margin-left: 2px;
+#leftButtons button {
     min-width: 60px;
 }
 
-#themeChange {
+#centerButtons {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-#socialMediaButtons {
+#rightButtons {
     flex: 1;
     display: flex;
     justify-content: flex-end;
@@ -149,4 +158,70 @@ button:hover {
 
 #changeDayNightColor i {
     padding-left: 5px;
+}
+
+/* ABOUT */
+
+#about a {
+    text-decoration: none;
+}
+
+#about header {
+    justify-content: flex-start;
+    background-color: white;
+}
+
+#about header i {
+    display: flex;
+    padding-left: 20px;
+    font-size: 50px;
+    color: grey;
+    padding-top: 10px;
+}
+
+#about main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 100px;
+}
+
+
+#about #authors {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    margin-top: 10px;
+}
+
+#about #authors .emoji {
+    font-size: 60px;
+}
+
+#about #authors div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#about #githubLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    color: black;
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #f3f3f3;
+}
+
+
+#about #githubLink i {
+    font-size: 60px;
+    padding-right: 10px;
 }
