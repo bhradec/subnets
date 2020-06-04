@@ -104,6 +104,11 @@ changeDayNightColorButton.onclick = function(event) {
     changeColor();
 }
 
+// Color scheme changes acording to system theme
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    changeColor();
+});
+
 /* Generates input table for the default number of subnets */
 generateSubnetInputTable(numOfSubnetsInput.value);
 
