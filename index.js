@@ -105,7 +105,7 @@ changeDayNightColorButton.onclick = () => {
 }
 
 // Color scheme changes acording to system theme
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
     changeColor();
 });
 
