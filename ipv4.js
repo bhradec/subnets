@@ -89,6 +89,20 @@ function ipAnd(ip1octets, ip2octets) {
 }
 
 /**
+ * Bitwise OR on 2 ip addresses
+ * @param {Array<number>} ip1octets Array of octets of 1. ip address (4 numbers)
+ * @param {Array<number>} ip2octets Array of octets of 2. ip address(4 numbers)
+ * @return {Array<number>} Array of octets (4 numbers) 
+ */
+function ipAnd(ip1octets, ip2octets) {
+    let result = [];
+    for (i = 0; i < 4; i++) {
+        result.push(ip1octets[i] | ip2octets[i]);
+    }
+    return result;
+}
+
+/**
  * Calculates ip addresses of subnets for given subnet data
  * @param {string} ipAddresCIDR Ipv4 address with the network suffix (ex: 192.168.1.1/24)
  * @param {Object[]} subnetData List of key value subnet data
