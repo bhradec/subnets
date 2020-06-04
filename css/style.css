@@ -59,8 +59,12 @@ footer {
     display: flex;
     height: 50px;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+
+footer button {
+    min-height: 30px;
 }
 
 input {
@@ -113,10 +117,31 @@ button:hover {
     min-height: 30px;
 }
 
+#languageChange {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#languageChange button {
+    margin-left: 2px;
+    min-width: 60px;
+}
+
+#themeChange {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#socialMediaButtons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
 #changeDayNightColor {
     display: flex;
-    min-width: 130px;
-    min-height: 30px;
     padding: 0px 5px;
     justify-content: space-between;
     align-items: center;
