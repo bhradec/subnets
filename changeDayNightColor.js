@@ -25,6 +25,8 @@ function setColor() {
     var tables = document.querySelectorAll("table");
     var tds = document.querySelectorAll("td");
     var buttons = document.querySelectorAll("button");
+    var header = document.getElementsByTagName("header")[0];
+    var footer = document.getElementsByTagName("footer")[0];
 
     if (currentColorMode == LIGHT_MODE) {
         // reset colors to default css values
@@ -47,6 +49,9 @@ function setColor() {
             button.style.backgroundColor = "";
             button.style.borderColor = "";
         }
+
+        header.style.backgroundColor = "";
+        footer.style.backgroundColor = "";
     } else if (currentColorMode == DARK_MODE) {
         document.body.style.backgroundColor = DARK_BACKGROUND;
         
@@ -67,5 +72,8 @@ function setColor() {
             button.style.backgroundColor = DARK_INPUT;
             button.style.borderColor = DARK_BORDER;
         }
+
+        header.style.backgroundColor = DARK_INPUT;
+        footer.style.backgroundColor = DARK_INPUT;
     }
 }

@@ -9,7 +9,7 @@ const ENGLISH = {
 }
 
 const RUSSIAN = {
-    "mainH1" : "VLSM калькулятор подсети",
+    "mainH1" : "ВЛСМ калькулятор подсети",
     "networkAddressLabel": "Сетевой адрес",
     "numOfSubnetsLabel" : "Количество подсетей",
     "subnetNameTh" : "Имя подсети",

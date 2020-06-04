@@ -17,7 +17,9 @@ body {
 header {
     display: flex;
     justify-content: center;
-    height: 80px;
+    align-items: center;
+    background-color: #f3f3f3;
+    min-height: 50px;
 }
 
 h1 {
@@ -32,6 +34,7 @@ main {
     /* takes all remaining space that 
      * header and footer don't */
     flex: 1;
+    margin-top: 30px;
 }
 
 section {
@@ -53,6 +56,8 @@ footer {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    background-color: #f3f3f3;
+    margin-top: 20px;
 }
 
 footer button {
