@@ -60,6 +60,35 @@ function getSuffix(ipAddresCIDR) {
 }
 
 /**
+ * Finds the next larger power of 2.
+ * If 4 is given, returns 8.
+ * If 10 is given returns 16.
+ * @param {number} x Given number
+ * @return {number} Next larger power of 2
+ */
+function nextPowerOfTwo(x) {
+    let currentNumber = 2;
+    while (x > currentNumber) {
+        currentNumber *= 2;
+    }
+    return currentNumber;
+}
+
+/**
+ * Bitwise AND on 2 ip addresses
+ * @param {Array<number>} ip1octets Array of octets of 1. ip address (4 numbers)
+ * @param {Array<number>} ip2octets Array of octets of 2. ip address(4 numbers)
+ * @return {Array<number>} Array of octets (4 numbers) 
+ */
+function ipAnd(ip1octets, ip2octets) {
+    let result = [];
+    for (i = 0; i < 4; i++) {
+        result.push(ip1octets[i] & ip2octets[i]);
+    }
+    return result;
+}
+
+/**
  * Calculates ip addresses of subnets for given subnet data
  * @param {string} ipAddresCIDR Ipv4 address with the network suffix (ex: 192.168.1.1/24)
  * @param {Object[]} subnetData List of key value subnet data
@@ -85,4 +114,12 @@ function calculateSubnets(ipAddresCIDR, subnetData) {
 
     console.log("OCTETS: " + octets);
     console.log("SUFFIX: " + suffix);
+
+    console.log(nextPowerOfTwo(6));
+    console.log(nextPowerOfTwo(4));
+
+    let exampleOctets = [192, 168, 1, 1];
+    let exampleSubnet = [255, 255, 0, 0];
+
+    console.log(ipAnd(exampleOctets, exampleSubnet));
 }

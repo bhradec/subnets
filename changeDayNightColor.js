@@ -74,7 +74,7 @@ function setColor() {
             button.style.borderColor = DARK_BORDER;
         }
 
-
+        // Color of the social media share buttons doesn't change
         for (shareButton of shareButtons) {
             shareButton.style.color = "";
         }
