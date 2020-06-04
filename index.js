@@ -106,4 +106,16 @@ changeDayNightColorButton.onclick = function(event) {
 
 /* Generates input table for the default number of subnets */
 generateSubnetInputTable(numOfSubnetsInput.value);
-//changeLanguage(RUSSIAN);
+
+document.getElementById("englishButton").onclick = () => {
+    changeLanguage(ENGLISH);
+};
+
+document.getElementById("russianButton").onclick = () => {
+    changeLanguage(RUSSIAN);
+};
+
+document.getElementById("chineseButton").onclick = () => {
+    changeLanguage(CHINESE);
+};
+

@@ -57,6 +57,8 @@ footer {
 
 footer button {
     min-height: 30px;
+    margin-right: 2px;
+    margin-left: 2px;
 }
 
 input {
@@ -116,7 +118,6 @@ button:hover {
 }
 
 #languageChange button {
-    margin-left: 2px;
     min-width: 60px;
 }
 
