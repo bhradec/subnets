@@ -151,3 +151,69 @@ button:hover {
 #changeDayNightColor i {
     padding-left: 5px;
 }
+
+/* ABOUT */
+
+#about a {
+    text-decoration: none;
+}
+
+#about header {
+    justify-content: flex-start;
+    background-color: white;
+}
+
+#about header i {
+    display: flex;
+    padding-left: 20px;
+    font-size: 50px;
+    color: grey;
+    padding-top: 10px;
+}
+
+#about main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 100px;
+}
+
+
+#about #authors {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    margin-top: 10px;
+}
+
+#about #authors .emoji {
+    font-size: 60px;
+}
+
+#about #authors div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#about #githubLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    color: black;
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #f3f3f3;
+}
+
+
+#about #githubLink i {
+    font-size: 60px;
+    padding-right: 10px;
+}

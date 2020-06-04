@@ -123,4 +123,3 @@ document.getElementById("russianButton").onclick = () => {
 document.getElementById("chineseButton").onclick = () => {
     changeLanguage(CHINESE);
 };
-
