@@ -119,23 +119,23 @@ button:hover {
     min-height: 30px;
 }
 
-#languageChange {
+#leftButtons {
     flex: 1;
     display: flex;
     justify-content: flex-start;
 }
 
-#languageChange button {
+#leftButtons button {
     min-width: 60px;
 }
 
-#themeChange {
+#centerButtons {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-#socialMediaButtons {
+#rightButtons {
     flex: 1;
     display: flex;
     justify-content: flex-end;

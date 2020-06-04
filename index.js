@@ -100,7 +100,7 @@ calculateButton.onclick = () => {
     calculateSubnets(networkAddress, subnetInputData);
 }
 
-changeDayNightColorButton.onclick = function(event) {
+changeDayNightColorButton.onclick = () => {
     changeColor();
 }
 
