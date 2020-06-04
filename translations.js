@@ -1,4 +1,5 @@
 const ENGLISH = {
+    "mainH1" : "VLSM subnet calculator",
     "networkAddressLabel": "Network address",
     "numOfSubnetsLabel" : "Number of subnets",
     "subnetNameTh" : "Subnet name",
@@ -8,6 +9,7 @@ const ENGLISH = {
 }
 
 const RUSSIAN = {
+    "mainH1" : "VLSM калькулятор подсети",
     "networkAddressLabel": "Сетевой адрес",
     "numOfSubnetsLabel" : "Количество подсетей",
     "subnetNameTh" : "Имя подсети",
@@ -17,6 +19,7 @@ const RUSSIAN = {
 }
 
 const CHINESE = {
+    "mainH1" : "VLSM 子网计算器",
     "networkAddressLabel": "网络地址",
     "numOfSubnetsLabel" : "子网数",
     "subnetNameTh" : "子网名称",
