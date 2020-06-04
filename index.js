@@ -97,13 +97,7 @@ calculateButton.onclick = () => {
         });
     }
 
-    /* sort subnetInputData by number of hosts descending */
-    subnetInputData.sort((a, b) => {
-        if (a.numOfHosts > b.numOfHosts) return -1;
-        else return 1;
-    })
-
-    // caluculateSubnets(subnetInputData, networkAddress);
+    calculateSubnets(networkAddress, subnetInputData);
 }
 
 changeDayNightColorButton.onclick = function(event) {
