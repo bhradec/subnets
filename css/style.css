@@ -59,6 +59,8 @@ footer button {
     min-height: 30px;
     margin-right: 2px;
     margin-left: 2px;
+    border-color: #a5a5a5;
+    color: grey;
 }
 
 input {
