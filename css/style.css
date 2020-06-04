@@ -37,14 +37,6 @@ main {
     margin-top: 30px;
 }
 
-aside {
-    width: 200px;
-    
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
 section {
     width: 100%;
     display: flex;
@@ -158,6 +150,27 @@ button:hover {
 
 #changeDayNightColor i {
     padding-left: 5px;
+}
+
+.shareButton {
+    padding: 0px;
+    border: 0px;
+}
+
+.shareButton i {
+    font-size: 30px;
+}
+
+#facebookShareButton i {
+    color: #3b5998;
+}
+
+#twitterShareButton {
+    color: #1da1F2;
+}
+
+#redditShareButton {
+    color: #ff5700;
 }
 
 /* ABOUT */

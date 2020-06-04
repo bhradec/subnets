@@ -27,6 +27,7 @@ function setColor() {
     var buttons = document.querySelectorAll("button");
     var header = document.getElementsByTagName("header")[0];
     var footer = document.getElementsByTagName("footer")[0];
+    var shareButtons = document.getElementsByClassName("shareButton");
 
     if (currentColorMode == LIGHT_MODE) {
         // reset colors to default css values
@@ -71,6 +72,11 @@ function setColor() {
             button.style.color = DARK_FOREGROUND_1;
             button.style.backgroundColor = DARK_INPUT;
             button.style.borderColor = DARK_BORDER;
+        }
+
+
+        for (shareButton of shareButtons) {
+            shareButton.style.color = "";
         }
 
         header.style.backgroundColor = DARK_INPUT;
