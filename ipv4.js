@@ -138,7 +138,7 @@ function numToStringByte(n) {
 
 /**
  * Bitwise NOT on ip address
- * @param {Array<number>} ip Array of octets of 1. ip address (4 numbers)
+ * @param {Array<number>} ip Array of octets of an ip address (4 numbers)
  * @returns {Array<number>} Array of octets (4 numbers) 
  */
 function ipNot(ip) {
@@ -153,6 +153,34 @@ function ipNot(ip) {
         }
         result.push(parseInt(stringByteNot, 2));
     }
+    return result;
+}
+
+/**
+ * Bitwise NOT on ip address
+ * @param {Array<number>} ip Array of octets of an ip address (4 numbers)
+ * @returns {Array<number>} Array of octets (4 numbers) 
+ */
+function incrementIp(ip) {
+    let result = ip;
+    if ((result[3] + 1) > 255) {
+        if ((resultp[2] + 1) > 255) {
+            if ((result[1] + 1) > 255) {
+                if ((result[0] + 1) > 255) {
+                    throw "IP LIMIT REACHED!";
+                } else {
+                    result[0] += 1;
+                }
+            } else {
+                result[1] += 1;
+            }
+        } else {
+            result[2] += 1;
+        }
+    } else {
+        result[3] += 1;
+    }
+
     return result;
 }
 
@@ -205,5 +233,6 @@ function calculateSubnets(ipCIDR, subnetData) {
         "broadcast" : broadcast
     });
 
-    console.log(results[0]);        
+    ip = incrementIp(broadcast);
+    console.log("NEXT IP: " + ip);
 }
