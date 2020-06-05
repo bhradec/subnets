@@ -1,6 +1,6 @@
 /**
  * Validates an ipv4 address.
- * @param {string} ipAddress  Ipv4 address to validate.
+ * @param {string} ipAddress - Ipv4 address to validate.
  * @returns {boolean} Returns true if ipv4 address is valid, false if not.
  */
 function validateIpAddress(ipAddress) {
@@ -12,7 +12,7 @@ function validateIpAddress(ipAddress) {
 
 /**
  * Validates an ipv4 address with the network mask suffix.
- * @param {string} ipCIDR Ipv4 address with the network suffix (ex: 192.168.1.1/24)
+ * @param {string} ipCIDR - Ipv4 address with the network suffix (ex: 192.168.1.1/24)
  * @returns {boolean} Returns true if ipv4 address and suffix are valid, false if not. 
  */
 function validateIpAddressCIDR(ipCIDR) {
@@ -28,7 +28,7 @@ function validateIpAddressCIDR(ipCIDR) {
 /**
  * Gets an address part (no suffix) from ip address string.
  * For example: 192.168.1.1/24 -> 192.168.1.1
- * @param {string} ipCIDR Ipv4 address with the network suffix (ex: 192.168.1.1/24)
+ * @param {string} ipCIDR - Ipv4 address with the network suffix (ex: 192.168.1.1/24)
  * @returns {string} Address part (no suffix)
  */
 function getIp(ipCIDR) {
@@ -37,7 +37,7 @@ function getIp(ipCIDR) {
 
 /**
  * Gets the subnet suffix
- * @param {string} ipCIDR Ipv4 address with the network suffix (ex: 192.168.1.1/24) 
+ * @param {string} ipCIDR - Ipv4 address with the network suffix (ex: 192.168.1.1/24) 
  * @returns {number} Subnet mask suffix
  */
 function getSuffix(ipCIDR) {
@@ -47,7 +47,7 @@ function getSuffix(ipCIDR) {
 /**
  * Takes a ip string and turns it into ipv4 address.
  * For exmpale: "192.168.1.1" -> [192, 168, 1, 1]
- * @param {string} ipCIDR Ipv4 address (ex: 192.168.1.1) 
+ * @param {string} ipCIDR - Ipv4 address (ex: 192.168.1.1) 
  * @returns {Array<number>} Array of 4 ip octets
  */
 function ipToOctets(ip) {
@@ -64,7 +64,7 @@ function ipToOctets(ip) {
 /**
  * Takes a subnet mask suffix and turns it into ipv4 address.
  * For exmpale: 24 -> [255, 255, 255, 0]
- * @param {number} suffix subnet mask suffix
+ * @param {number} suffix - subnet mask suffix
  * @returns {Array<number>} Array of octets (4 numbers)
  */
 function suffixToOctetes(suffix) {
@@ -87,7 +87,7 @@ function suffixToOctetes(suffix) {
  * Finds the next larger power of 2.
  * If 4 is given, returns 8.
  * If 10 is given returns 16.
- * @param {number} x Given number
+ * @param {number} x - Given number
  * @returns {number} Next larger power of 2
  */
 function nextPowerOfTwo(x) {
@@ -100,8 +100,8 @@ function nextPowerOfTwo(x) {
 
 /**
  * Bitwise AND on 2 ip addresses
- * @param {Array<number>} ip1 Array of octets of 1. ip address (4 numbers)
- * @param {Array<number>} ip2 Array of octets of 2. ip address(4 numbers)
+ * @param {Array<number>} ip1 - Array of octets of 1. ip address (4 numbers)
+ * @param {Array<number>} ip2 - Array of octets of 2. ip address(4 numbers)
  * @returns {Array<number>} Array of octets (4 numbers) 
  */
 function ipAnd(ip1, ip2) {
@@ -114,8 +114,8 @@ function ipAnd(ip1, ip2) {
 
 /**
  * Bitwise OR on 2 ip addresses
- * @param {Array<number>} ip1 Array of octets of 1. ip address (4 numbers)
- * @param {Array<number>} ip2 Array of octets of 2. ip address(4 numbers)
+ * @param {Array<number>} ip1 - Array of octets of 1. ip address (4 numbers)
+ * @param {Array<number>} ip2 - Array of octets of 2. ip address(4 numbers)
  * @returns {Array<number>} Array of octets (4 numbers) 
  */
 function ipOr(ip1, ip2) {
@@ -129,7 +129,7 @@ function ipOr(ip1, ip2) {
 /**
  * Turns a number to 8 bit byte string.
  * For example: 2 -> 00000010
- * @param {number} Given number 
+ * @param {number} Given - number 
  * @returns {string} String representing 8 bit binary number
  */
 function numToStringByte(n) {
@@ -138,7 +138,7 @@ function numToStringByte(n) {
 
 /**
  * Bitwise NOT on ip address
- * @param {Array<number>} ip Array of octets of an ip address (4 numbers)
+ * @param {Array<number>} ip - Array of octets of an ip address (4 numbers)
  * @returns {Array<number>} Array of octets (4 numbers) 
  */
 function ipNot(ip) {
@@ -158,7 +158,7 @@ function ipNot(ip) {
 
 /**
  * Bitwise NOT on ip address
- * @param {Array<number>} ip Array of octets of an ip address (4 numbers)
+ * @param {Array<number>} ip - Array of octets of an ip address (4 numbers)
  * @returns {Array<number>} Array of octets (4 numbers) 
  */
 function incrementIp(ip) {
@@ -186,8 +186,8 @@ function incrementIp(ip) {
 
 /**
  * Logarithm function
- * @param {number} Base
- * @param {number} Number
+ * @param {number} x - Base
+ * @param {number} y - Number
  * @returns {number} Logarithm result 
  */
 function getBaseLog(x, y) {
@@ -196,10 +196,9 @@ function getBaseLog(x, y) {
 
 /**
  * Calculates ip addresses of subnets for given subnet data
- * @param {string} ipCIDR Ipv4 address with the network suffix (ex: 192.168.1.1/24)
- * @param {Object[]} subnetData List of key value subnet data
- * @param {string} subnetData[].subnetName Key - name of the subnet
- * @param {number} subnetData[].numOfHosts Value - number of hosts for the subnet
+ * @param {string} ipCIDR - Ipv4 address with the network suffix (ex: 192.168.1.1/24)
+ * @param {Array<Object>} subnetData - List of key value subnet data.
+ * @returns {Array<Object>} Results
  */
 function calculateSubnets(ipCIDR, subnetData) {
     
@@ -213,26 +212,34 @@ function calculateSubnets(ipCIDR, subnetData) {
 
     let ip = ipToOctets(getIp(ipCIDR));
   
-    let subnet = subnetData[0];
+    for (subnet of subnetData) {
+        let maxHostNum = nextPowerOfTwo(subnet.numOfHosts);
+        let subnetSuffix = 32 - getBaseLog(2, maxHostNum);
+        let subnetMask = suffixToOctetes(subnetSuffix);
+        let networkAddress = ipAnd(ip, subnetMask);
+        let firstHost = ipOr(networkAddress, [0, 0, 0, 1]);
+        let broadcast = ipOr(networkAddress, ipNot(suffixToOctetes(subnetSuffix)));
+        let lastHost = ipAnd(broadcast, [255, 255, 255, 254]);
+    
+        results.push({
+            "subnetName" : subnet.subnetName,
+            "requiredHosts" : subnet.numOfHosts,
+            "maxHostNum" : maxHostNum,
+            "subnetSuffix" : subnetSuffix,
+            "subnetMask" : subnetMask,
+            "networkAddress" : networkAddress,
+            "firstHost" : firstHost,
+            "lastHost" : lastHost,
+            "broadcast" : broadcast
+        });
+    
+        ip = incrementIp(broadcast);
+    }
 
-    let maxHostNum = nextPowerOfTwo(subnet.numOfHosts);
-    let subnetSuffix = 32 - getBaseLog(2, maxHostNum);
-    let subnetMask = suffixToOctetes(subnetSuffix);
-    let networkAddress = ipAnd(ip, subnetMask);
-    let firstHost = ipOr(networkAddress, [0, 0, 0, 1]);
-    let broadcast = ipOr(networkAddress, ipNot(suffixToOctetes(subnetSuffix)));
-    let lastHost = ipAnd(broadcast, [255, 255, 255, 254]);
-
-    results.push({
-        "maxHostNum" : maxHostNum,
-        "subnetSuffix" : subnetSuffix,
-        "subnetMask" : subnetMask,
-        "networkAddress" : networkAddress,
-        "firstHost" : firstHost,
-        "lastHost" : lastHost,
-        "broadcast" : broadcast
-    });
-
-    ip = incrementIp(broadcast);
-    console.log("NEXT IP: " + ip);
+    results.sort((a, b) => {
+        if (a.requiredHosts > b.requiredHosts) return -1;
+        else return 1;
+    })
+    
+    return results;
 }

@@ -1,5 +1,6 @@
 var networkAddressInput = document.getElementById("networkAddress");
 var subnetInputTable = document.getElementById("subnetInputTable");
+var resultTable = document.getElementById("resultTable");
 var numOfSubnetsInput = document.getElementById("numOfSubnets");
 var calculateButton = document.getElementById("calculate");
 var changeDayNightColorButton = document.getElementById("changeDayNightColor");
@@ -41,11 +42,26 @@ function removeInputTableRow() {
 
 /**
  * Generates subnet input table with the given number of rows.
- * @param {number} numOfSubnets Number od rows in the subnet input table.
+ * @param {number} numOfSubnets - Number od rows in the subnet input table.
  */
 function generateSubnetInputTable(numOfSubnets) {
     for (i = 0; i < numOfSubnets; i++) {
         addInputTableRow();        
+    }
+}
+
+/**
+ * Generates a table containing results of the calucalteSubnets function
+ * @param {Array<Object>} results - Results of the calculateSubnets function 
+ */
+function generateResultTable(results) {
+    for (result of results) {
+        let tableRow = resultTable.insertRow();
+        
+        for (prop in result) {
+            let tableCell = tableRow.insertCell();
+            tableCell.innerHTML = result[prop];
+        }
     }
 }
 
@@ -97,7 +113,8 @@ calculateButton.onclick = () => {
         });
     }
 
-    calculateSubnets(networkAddress, subnetInputData);
+    let results = calculateSubnets(networkAddress, subnetInputData);
+    generateResultTable(results);
 }
 
 changeDayNightColorButton.onclick = () => {
