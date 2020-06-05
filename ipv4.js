@@ -94,7 +94,7 @@ function ipAnd(ip1octets, ip2octets) {
  * @param {Array<number>} ip2octets Array of octets of 2. ip address(4 numbers)
  * @return {Array<number>} Array of octets (4 numbers) 
  */
-function ipAnd(ip1octets, ip2octets) {
+function ipOr(ip1octets, ip2octets) {
     let result = [];
     for (i = 0; i < 4; i++) {
         result.push(ip1octets[i] | ip2octets[i]);
