@@ -55,6 +55,7 @@ function generateSubnetInputTable(numOfSubnets) {
  * @param {Array<Object>} results - Results of the calculateSubnets function 
  */
 function generateResultTable(results) {
+    resultTable.innerHTML = "";
     for (result of results) {
         let tableRow = resultTable.insertRow();
         
