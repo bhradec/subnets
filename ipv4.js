@@ -164,7 +164,7 @@ function ipNot(ip) {
 function incrementIp(ip) {
     let result = ip;
     if ((result[3] + 1) > 255) {
-        if ((resultp[2] + 1) > 255) {
+        if ((result[2] + 1) > 255) {
             if ((result[1] + 1) > 255) {
                 if ((result[0] + 1) > 255) {
                     throw "IP LIMIT REACHED!";
