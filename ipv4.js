@@ -17,7 +17,13 @@ function validateIpAddress(ipAddress) {
  */
 function validateIpAddressCIDR(ipCIDR) {
     let ipAddress = ipCIDR.split("/")[0];
-    let suffix = Number(ipCIDR.split("/")[1]);
+    let suffixStr = ipCIDR.split("/")[1];
+
+    if (suffixStr == null) return false;
+    if (ipAddress == null) return false;
+
+    let suffix = Number(suffixStr);
+
 
     if (validateIpAddress(ipAddress) == false) return false;
     

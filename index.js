@@ -56,12 +56,22 @@ function generateSubnetInputTable(numOfSubnets) {
  */
 function generateResultTable(results) {
     resultTable.innerHTML = "";
+    let tableHeader = resultTable.insertRow();
+    let headerElements = ["Subnet", "REQ", "MAX", "SUFF", 
+        "Subnet mask", "Net. addr.", "First", "Last", "Broadcast"];
+    
+    for (headerElement of headerElements) {
+        let th = document.createElement("th");
+        th.innerHTML = headerElement;
+        tableHeader.appendChild(th);
+    }
+
     for (result of results) {
         let tableRow = resultTable.insertRow();
         
         for (prop in result) {
             let tableCell = tableRow.insertCell();
-            tableCell.innerHTML = result[prop];
+            tableCell.innerHTML = result[prop].toString().replace(/,/g, ".");
         }
     }
 }
@@ -99,6 +109,7 @@ calculateButton.onclick = () => {
     if(validateIpAddressCIDR(networkAddress) == false) {
         let errorSpan = document.getElementById("networkAddressError");
         errorSpan.innerHTML = "Invalid IPv4 address";
+        return;
     }
 
     let subnetNameInputs = document.getElementsByClassName("subnetNameInput");

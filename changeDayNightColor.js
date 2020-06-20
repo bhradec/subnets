@@ -43,7 +43,11 @@ function setColor() {
         }
         
         for(table of tables) table.style.color = "";
-        for(td of tds) td.style.borderColor = "";
+        
+        for(td of tds) {
+            td.style.borderColor = "";
+            td.style.backgroundColor = "";
+        }
 
         for(button of buttons) {
             button.style.color = "";
@@ -66,7 +70,11 @@ function setColor() {
         }
         
         for(table of tables) table.style.color = DARK_FOREGROUND_1;
-        for(td of tds) td.style.borderColor = DARK_BORDER;
+        
+        for(td of tds) {
+            td.style.borderColor = DARK_BORDER;
+            td.style.backgroundColor = DARK_INPUT;
+        }
 
         for(button of buttons) {
             button.style.color = DARK_FOREGROUND_1;
