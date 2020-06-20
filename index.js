@@ -137,7 +137,3 @@ document.getElementById("englishButton").onclick = () => {
 document.getElementById("russianButton").onclick = () => {
     changeLanguage(RUSSIAN);
 };
-
-document.getElementById("chineseButton").onclick = () => {
-    changeLanguage(CHINESE);
-};
