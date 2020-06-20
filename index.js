@@ -1,6 +1,7 @@
 var networkAddressInput = document.getElementById("networkAddress");
 var subnetInputTable = document.getElementById("subnetInputTable");
 var resultTable = document.getElementById("resultTable");
+var resultTableErrorPlace = document.getElementById("resultTableError");
 var numOfSubnetsInput = document.getElementById("numOfSubnets");
 var calculateButton = document.getElementById("calculate");
 var changeDayNightColorButton = document.getElementById("changeDayNightColor");
@@ -125,8 +126,14 @@ calculateButton.onclick = () => {
         });
     }
 
-    let results = calculateSubnets(networkAddress, subnetInputData);
-    generateResultTable(results);
+    try {
+        resultTableErrorPlace.innerHTML = "";
+        let results = calculateSubnets(networkAddress, subnetInputData);
+        generateResultTable(results);
+    } catch (exception) {
+        resultTableErrorPlace.innerHTML = exception;
+    }
+
 }
 
 changeDayNightColorButton.onclick = () => {

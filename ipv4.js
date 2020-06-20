@@ -176,7 +176,7 @@ function incrementIp(ip) {
         if ((result[2] + 1) > 255) {
             if ((result[1] + 1) > 255) {
                 if ((result[0] + 1) > 255) {
-                    throw "IP LIMIT REACHED!";
+                    throw "Too many hosts for given network!";
                 } else {
                     result[0] += 1;
                 }
