@@ -126,7 +126,7 @@ button:hover {
 }
 
 #resultTable td {
-    height: 25px;
+    min-height: 25px;
     padding: 5px;
 }
 
@@ -182,4 +182,76 @@ button:hover {
 
 #redditShareButton {
     color: #ff5700;
+}
+
+@media (max-width: 720px) {
+    
+    #subnetInputTable {
+        width: 100%;
+    }
+
+    #subnetInputTable input {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    #resultTable {
+        width: 90%;
+    }
+
+    #resultTable tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        margin-bottom: 20px;
+    }
+
+    #resultTable tr:first-child {
+        display: none;
+    }
+
+    #resultTable td {
+        border: 0px;
+    }
+
+    #resultTable td::before {
+        color: #43a58f;
+        font-weight: bold;
+    }
+
+    #resultTable td:nth-child(1)::before {
+        content: "Subnet: ";
+    }
+
+    #resultTable td:nth-child(2)::before {
+        content: "REQ: ";
+    }
+
+    #resultTable td:nth-child(3)::before {
+        content: "MAX: ";
+    }
+
+    #resultTable td:nth-child(4)::before {
+        content: "SUFF: ";
+    }
+
+    #resultTable td:nth-child(5)::before {
+        content: "Subnet mask: ";
+    }
+
+    #resultTable td:nth-child(6)::before {
+        content: "Network: ";
+    }
+
+    #resultTable td:nth-child(7)::before {
+        content: "First: ";
+    }
+
+    #resultTable td:nth-child(8)::before {
+        content: "Last: ";
+    }
+
+    #resultTable td:nth-child(9)::before {
+        content: "Broadcast: ";
+    }
 }
