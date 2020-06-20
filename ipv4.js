@@ -168,7 +168,10 @@ function ipNot(ip) {
  * @returns {Array<number>} Array of octets (4 numbers) 
  */
 function incrementIp(ip) {
-    let result = ip;
+
+    let result = [];
+    for (octet of ip) result.push(octet);
+
     if ((result[3] + 1) > 255) {
         if ((result[2] + 1) > 255) {
             if ((result[1] + 1) > 255) {
@@ -238,7 +241,7 @@ function calculateSubnets(ipCIDR, subnetData) {
             "lastHost" : lastHost,
             "broadcast" : broadcast
         });
-    
+        
         ip = incrementIp(broadcast);
     }
 
