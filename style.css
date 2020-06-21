@@ -251,15 +251,15 @@ button:hover {
     }
 
     #resultTable td:nth-child(4)::before {
-        content: "SUFF: ";
+        content: "Network: ";
     }
 
     #resultTable td:nth-child(5)::before {
-        content: "Subnet mask: ";
+        content: "SUFF: ";
     }
 
     #resultTable td:nth-child(6)::before {
-        content: "Network: ";
+        content: "Subnet mask: ";
     }
 
     #resultTable td:nth-child(7)::before {

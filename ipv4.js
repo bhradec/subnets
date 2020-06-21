@@ -234,9 +234,9 @@ function calculateSubnets(ipCIDR, subnetData) {
             "subnetName" : subnet.subnetName,
             "requiredHosts" : subnet.numOfHosts,
             "maxHostNum" : maxHostNum,
-            "subnetSuffix" : subnetSuffix,
-            "subnetMask" : subnetMask,
             "networkAddress" : networkAddress,
+            "subnetSuffix" : "/" + subnetSuffix.toString(),
+            "subnetMask" : subnetMask,
             "firstHost" : firstHost,
             "lastHost" : lastHost,
             "broadcast" : broadcast

@@ -59,8 +59,8 @@ function generateSubnetInputTable(numOfSubnets) {
 function generateResultTable(results) {
     resultTable.innerHTML = "";
     let tableHeader = resultTable.insertRow();
-    let headerElements = ["Subnet", "REQ", "MAX", "SUFF", 
-        "Subnet mask", "Network", "First", "Last", "Broadcast"];
+    let headerElements = ["Subnet", "REQ", "MAX", "Network", 
+        "SUFF ", "Subnet mask", "First", "Last", "Broadcast"];
     
     for (headerElement of headerElements) {
         let th = document.createElement("th");
