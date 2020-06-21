@@ -2,6 +2,7 @@ var networkAddressInput = document.getElementById("networkAddress");
 var subnetInputTable = document.getElementById("subnetInputTable");
 var resultTable = document.getElementById("resultTable");
 var resultTableErrorPlace = document.getElementById("resultTableError");
+var resultTableInfoPlace = document.getElementById("resultTableInfo");
 var numOfSubnetsInput = document.getElementById("numOfSubnets");
 var calculateButton = document.getElementById("calculate");
 var changeDayNightColorButton = document.getElementById("changeDayNightColor");
@@ -75,6 +76,9 @@ function generateResultTable(results) {
             tableCell.innerHTML = result[prop].toString().replace(/,/g, ".");
         }
     }
+
+    resultTableInfoPlace.style.display = "block";
+
 }
 
 /* Adds or removes a table row on subnet number change */

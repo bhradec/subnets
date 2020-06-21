@@ -5,7 +5,11 @@ const ENGLISH = {
     "subnetNameTh" : "Subnet name",
     "numberOfHostsTh" : "Number of hosts",
     "calculate" : "Calculate",
-    "changeTheme" : "Change theme"
+    "changeTheme" : "Change theme",
+    "reqDesc" : "Required number of hosts",
+    "maxDesc" : "Maximum available number of hosts",
+    "firstDesc" : "First available host address",
+    "lastDesc" : "Last available host address"
 }
 
 const RUSSIAN = {
@@ -15,7 +19,11 @@ const RUSSIAN = {
     "subnetNameTh" : "Имя подсети",
     "numberOfHostsTh" : "Количество хостов",
     "calculate" : "Рассчитать",
-    "changeTheme" : "Поменять тему"
+    "changeTheme" : "Поменять тему",
+    "reqDesc" : "Требуемое количество хостов",
+    "maxDesc" : "Максимально доступное количество хостов",
+    "firstDesc" : "Первый доступный адрес хоста",
+    "lastDesc" : "Последний доступный адрес хоста"
 }
 
 function changeLanguage(language) {
