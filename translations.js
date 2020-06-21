@@ -8,9 +8,7 @@ const ENGLISH = {
     "changeTheme" : "Change theme",
     "reqDesc" : "Required number of hosts",
     "maxDesc" : "Maximum available number of hosts",
-    "suffDesc" : "Subnet suffix (CIDR)",
-    "firstDesc" : "First available host address",
-    "lastDesc" : "Last available host address"
+    "suffDesc" : "Subnet suffix (CIDR)"
 }
 
 const RUSSIAN = {
@@ -23,9 +21,7 @@ const RUSSIAN = {
     "changeTheme" : "Поменять тему",
     "reqDesc" : "Требуемое количество хостов",
     "maxDesc" : "Максимально доступное количество хостов",
-    "suffDesc" : "Суффикс подсети (ЦИДР)",
-    "firstDesc" : "Первый доступный адрес хоста",
-    "lastDesc" : "Последний доступный адрес хоста"
+    "suffDesc" : "Суффикс подсети (ЦИДР)"
 }
 
 function changeLanguage(language) {

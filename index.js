@@ -60,7 +60,7 @@ function generateResultTable(results) {
     resultTable.innerHTML = "";
     let tableHeader = resultTable.insertRow();
     let headerElements = ["Subnet", "REQ", "MAX", "Network", 
-        "SUFF ", "Subnet mask", "First", "Last", "Broadcast"];
+        "SUFF ", "Subnet mask", "First host", "Last host", "Broadcast"];
     
     for (headerElement of headerElements) {
         let th = document.createElement("th");
