@@ -1,5 +1,6 @@
 var networkAddressInput = document.getElementById("networkAddress");
 var subnetInputTable = document.getElementById("subnetInputTable");
+var subnetInputErrorPlace = document.getElementById("subnetInputError");
 var resultTable = document.getElementById("resultTable");
 var resultTableErrorPlace = document.getElementById("resultTableError");
 var resultTableInfoPlace = document.getElementById("resultTableInfo");
@@ -21,8 +22,8 @@ function addInputTableRow() {
     let subnetNameInput = document.createElement("input");
     subnetNameInput.type = "text";
     subnetNameInput.className = "subnetNameInput";
-
     subnetNameInput.value = "Subnet " + (currentRow + 1).toString();
+    
     currentRow++;
 
     // second cell - number of hosts input
@@ -119,6 +120,22 @@ calculateButton.onclick = () => {
 
     let subnetNameInputs = document.getElementsByClassName("subnetNameInput");
     let numOfHostsInputs = document.getElementsByClassName("numOfHostsInput")
+
+    for (subnetNameInput of subnetNameInputs) {
+        if (subnetNameInput.value.length == 0) {
+            subnetInputErrorPlace.innerHTML = "All data in the table must be eneterd!";
+            return;
+        }
+    }
+
+    for (numOfHostsInput of numOfHostsInputs) {
+        if (numOfHostsInput.value <= 0) {
+            subnetInputErrorPlace.innerHTML = "All data in the table must be eneterd!";
+            return;
+        }
+    }
+
+    subnetInputErrorPlace.innerHTML = "";
 
     let subnetInputData = [];
 
