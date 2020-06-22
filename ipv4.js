@@ -222,7 +222,10 @@ function calculateSubnets(ipCIDR, subnetData) {
     let ip = ipToOctets(getIp(ipCIDR));
   
     for (subnet of subnetData) {
-        let maxHostNum = nextPowerOfTwo(subnet.numOfHosts);
+        /* If 20 hosts are requested, calculation should be done as
+         * 22 hosts are requested, because 2 addresses are reserved for
+         * network and broadcast address */
+        let maxHostNum = nextPowerOfTwo(subnet.numOfHosts + 2);
         let subnetSuffix = 32 - getBaseLog(2, maxHostNum);
         let subnetMask = suffixToOctetes(subnetSuffix);
         let networkAddress = ipAnd(ip, subnetMask);
@@ -233,7 +236,7 @@ function calculateSubnets(ipCIDR, subnetData) {
         results.push({
             "subnetName" : subnet.subnetName,
             "requiredHosts" : subnet.numOfHosts,
-            "maxHostNum" : maxHostNum,
+            "maxHostNum" : maxHostNum - 2,
             "networkAddress" : networkAddress,
             "subnetSuffix" : "/" + subnetSuffix.toString(),
             "subnetMask" : subnetMask,
