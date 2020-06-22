@@ -155,6 +155,23 @@ calculateButton.onclick = () => {
         resultTableErrorPlace.innerHTML = exception;
     }
 
+    /* Bez sljedeceg dijela prilikom generiranja tablice u tamnoj 
+     * temi uzima se bijela pozadinska boja iz css-a (sto nije dobro)*/
+    // ovo treba rijesiti na bolji nacin
+    let tds = document.querySelectorAll("td");
+
+    if (currentColorMode == DARK_MODE) {
+        for(td of tds) {
+            td.style.borderColor = DARK_BORDER;
+            td.style.backgroundColor = DARK_INPUT;
+        }
+    } else {
+        for(td of tds) {
+            td.style.borderColor = "";
+            td.style.backgroundColor = "";
+        }
+    }
+
 }
 
 changeDayNightColorButton.onclick = () => {
