@@ -173,8 +173,11 @@ function incrementIp(ip) {
     for (octet of ip) result.push(octet);
 
     if ((result[3] + 1) > 255) {
+        result[3] = 0;
         if ((result[2] + 1) > 255) {
+            result[2] = 0;
             if ((result[1] + 1) > 255) {
+                result[1] = 0;
                 if ((result[0] + 1) > 255) {
                     throw "Too many hosts for given network!";
                 } else {
