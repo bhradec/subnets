@@ -209,6 +209,9 @@ button:hover {
 
 @media (max-width: 720px) {
     
+    h1 {
+        font-size: 22px;
+    }
     #subnetInputTable {
         width: 100%;
     }
