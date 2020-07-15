@@ -24,9 +24,9 @@
     <main id="about">
         <article>
             <span>Made by Antonio, Ivan Luka & Bruno</span>
-            <span class="error"><strong>THERE IS NO WARRANTY</strong></span>
+            <span id="warning"><strong>THERE IS NO WARRANTY</strong></span>
             <span>If you notice any errors, problems or have an idea how to improve this website, you can send an email to:</span>
-            <span><strong>aib.subnetting@gmail.com</strong></span>
+            <span id="email"><strong>aib.subnetting@gmail.com</strong></span>
         </article>
     </main>
     

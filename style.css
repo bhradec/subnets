@@ -150,9 +150,13 @@ table {
     width: 50%;
 }
 
-#about img {
-    margin-top: 30px;
-    width: 40%;
+#about #warning {
+    color: red;
+}
+
+#about #email {
+    font-size: 40px;
+    color: #007fff;
 }
 
 @media (max-width: 720px)  {
