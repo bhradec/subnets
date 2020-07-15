@@ -21,22 +21,10 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html"><h1>Subnetting.me</h1></a>
-            <ul>
-                <li><a href="index.html">VLSM</a></li>
-                <li><a href="ipv4.html">IPv4</a></li>
-                <li><a href="ipv6.html">IPv6</a></li>
-                <li><a href="about.html">About</a></li>
-                <li>
-                    <button onclick="changeTheme()">
-                        <i class="far fa-lightbulb"></i>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php
+        include "util.php"; 
+        generateHeader(); 
+    ?>
 
     <main id="vlsm">
 

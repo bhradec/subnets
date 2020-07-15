@@ -137,6 +137,24 @@ table {
     font-weight: bold;
 }
 
+#about span {
+    display: block;
+    padding-top: 10px;
+}
+
+#about article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 50%;
+}
+
+#about img {
+    margin-top: 30px;
+    width: 40%;
+}
+
 @media (max-width: 720px)  {
 
     nav {
