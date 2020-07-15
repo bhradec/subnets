@@ -12,17 +12,17 @@ body, td, input, i, a:link, a:visited {
 }
 
 th {
-    color: #7c4dff;
+    color: #007fff;
 }
 
 nav h1,
 nav a:hover, 
 nav button:hover {
-    color: #7c4dff;
+    color: #007fff;
 }
 
 main button {
-    background-color: #7c4dff;
+    background-color: #007fff;
     color: white;
 }
 
@@ -32,13 +32,13 @@ input, td {
 }
 
 #subnetResultTableInfo tr td:first-child {
-    color: #7c4dff;
+    color: #007fff;
 }
 
 @media (max-width: 720px) {
 
     #subnetResultTable td::before {
-        color: #7c4dff;
+        color: #007fff;
     }
 
 }

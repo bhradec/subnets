@@ -5,9 +5,8 @@ var numOfSubnetsInput = document.getElementById("numOfSubnetsInput");
 var subnetInputTable = document.getElementById("subnetInputTable");
 var networkAddressInput = document.getElementById("networkAddressInput");
 var subnetResultTable = document.getElementById("subnetResultTable");
-var currentRows = 0;
 var currentTheme = LIGHT_THEME;
-
+var currentRows = 0;
 
 function addRow() {
     let row = subnetInputTable.insertRow();
@@ -151,3 +150,8 @@ function changeTheme() {
 }
 
 generateSubnetInputTable();
+
+// Color scheme changes acording to system theme
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    changeTheme();
+});

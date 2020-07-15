@@ -1,44 +1,44 @@
 body {
-    background-color: #0f111a;
+    background-color: #0F111A;
 }
 
 header {
-    background-color: #1d202e;
-    box-shadow: 0px 0px 10px #000000;
+    background-color: #1F2233;
+    box-shadow: 0px 0px 10px black;
 }
 
 body, td, input, i, a:link, a:visited {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 th {
-    color: #82aaff;
+    color: #007fff;
 }
 
 nav h1,
 nav a:hover, 
 nav button:hover {
-    color: #82aaff;
+    color: #43a1ff;
 }
 
 main button {
-    background-color: #5883df;
+    background-color: #007fff;
     color: white;
 }
 
 input, td {
-    background-color: #151722;
-    border: 1px solid #82aaff;
+    background-color: transparent;
+    border: 1px solid #2c5c8d;
 }
 
 #subnetResultTableInfo tr td:first-child {
-    color: #82aaff;
+    color: #007fff;
 }
 
 @media (max-width: 720px) {
 
-    #resultTable td::before {
-        color: #5883df;
+    #subnetResultTable td::before {
+        color: #007fff;
     }
 
 }
