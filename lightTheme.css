@@ -1,0 +1,44 @@
+body {
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px lightgrey;
+}
+
+body, td, input, i, a:link, a:visited {
+    color: #000000;
+}
+
+th {
+    color: #7c4dff;
+}
+
+nav h1,
+nav a:hover, 
+nav button:hover {
+    color: #7c4dff;
+}
+
+main button {
+    background-color: #7c4dff;
+    color: white;
+}
+
+input, td {
+    background-color: transparent;
+    border: 1px solid #000000;
+}
+
+#subnetResultTableInfo tr td:first-child {
+    color: #7c4dff;
+}
+
+@media (max-width: 720px) {
+
+    #subnetResultTable td::before {
+        color: #7c4dff;
+    }
+
+}

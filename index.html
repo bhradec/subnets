@@ -1,105 +1,82 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Easy to use VLSM calculator for finding subnetwork addresses, network masks, broadcast addresses, number of hosts and usable ranges">
-    <meta name="keywords" content="VLSM, subnetworking, subnetting, subnet, calculator, ip, ipv4">
-    <meta name="author" content="Bruno Hradec, Ivan Luka Špoljar, Antonio Jurešić">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>VLSM calculator</title>
-    <link rel="icon" href="images/LOGO.ico" type="image/x-icon" sizes="32x32">
+    <title>Subnetting</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/fdf66c768c.js" crossorigin="anonymous"></script>
+    <link id="theme" rel="stylesheet" href="lightTheme.css">
 
-    <!-- import scripts -->
     <script src="ipv4.js"></script>
-    <script src="changeDayNightColor.js"></script>
-    <script src="translations.js"></script>
+    <script src="https://kit.fontawesome.com/fdf66c768c.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+
     <header>
-        <h1 id="mainH1">VLSM subnet calculator</h1>
+        <nav>
+            <h1>Subnetting.me</h1>
+            <ul>
+                <li><a href="index.html">VLSM</a></li>
+                <li><a href="ipv4.html">IPv4</a></li>
+                <li><a href="ipv6.html">IPv6</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <button onclick="changeTheme()">
+                        <i class="far fa-lightbulb"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <aside>
-        
-    </aside>
+    <main id="vlsm">
 
-    <main>
-        <section>
-            <form id="dataInputForm">
-                <label for="networkAddress" id="networkAddressLabel">Network address</label>
-                <input type="text" name="networkAddress" id="networkAddress" placeholder="Ex: 192.168.1.1/24">
-                <span id="networkAddressError" class="error"></span>
-                <label class for="numOfSubnets" id="numOfSubnetsLabel">Number of subnets</label>
-                <input type="number" name="numOfSubnets" id="numOfSubnets" value="5">
-                <span id="numOfSubnetsError" class="error"></span> 
-            </form>
-            <form id="subnetInputForm">
-                <!-- table is created in index.js -->
-                <table id="subnetInputTable">
-                    <tr>
-                        <th id="subnetNameTh">Subnet name</th>
-                        <th id="numberOfHostsTh">Number of hosts</th>
-                    </tr>
-                </table> 
-            </form>
-            <span id="subnetInputError" class="error"></span>
-            <button id="calculate">Calculate</button>
-        </section>
-        <section>
-            <table id="resultTable"></table>
-            <span id="resultTableError" class="error"></span>
-            <span id="resultTableInfo">
-                <table>
-                    <tr>
-                        <td>REQ: </td>
-                        <td id="reqDesc">Required number of hosts</td>
-                    </tr>
-                    <tr>
-                        <td>MAX: </td>
-                        <td id="maxDesc">Maximum available number of hosts</td>
-                    </tr>
-                    <tr>
-                        <td>SUFF: </td>
-                        <td id="suffDesc">Subnet suffix (CIDR)</td>
-                    </tr>
-                </table>
-            </span>
-        </section>
+        <form id="networkInput">
+            <label for="networkAddressInput">Network address:</label>
+            <input type="text" name="networkAddressInput" id="networkAddressInput" value="192.168.0.1/24">
+            <span id="networkAddressErrorSpan" class="error"></span>
+            <label for="numOfSubnetsInput">Number of subnets:</label>
+            <input type="number" name="numOfSubnetsInput" id="numOfSubnetsInput" value="5" onchange="changeSubnetInputTable();">
+            <span id="numOfSubnetsErrorSpan" class="error"></span>
+        </form>
+
+        <!-- Rest of the table is generated in index.js -->
+        <table id="subnetInputTable">
+            <tr>
+                <th>Subnet name</th>
+                <th>Number of hosts</th>
+            </tr>
+        </table>
+        <span id="subnetInputErrorSpan" class="error"></span>
+
+        <button type="button" onclick="generateSubnetResults()">Calculate</button>
+        
+        <!-- Rest of the table is generated in index.js -->
+        <table id="subnetResultTable"></table>
+
+        <span id="subnetResultTableInfo">
+            <table>
+                <tr>
+                    <td>REQ: </td>
+                    <td id="reqDesc">Required number of hosts</td>
+                </tr>
+                <tr>
+                    <td>MAX: </td>
+                    <td id="maxDesc">Maximum available number of hosts</td>
+                </tr>
+                <tr>
+                    <td>SUFF: </td>
+                    <td id="suffDesc">Subnet suffix (CIDR)</td>
+                </tr>
+            </table>
+        </span>
     </main>
-    <footer>
-        <div id="leftButtons">
-            <button id="englishButton">EN</button>
-            <button id="russianButton">РУ</button>
-        </div>
-        <div id="centerButtons">
-            <button type="button" id="changeDayNightColor">
-                <div id="changeTheme">Change Theme</div>
-                <i class="far fa-lightbulb"></i>
-            </button>
-        </div>
-        <div id="rightButtons">
-            <a onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=vlsm-calculator.com','sharer','toolbar=0,status=0,height=325');" href="javascript: void(0)">
-                <button class="shareButton" id="facebookShareButton">
-                    <i class="fab fa-facebook"></i>
-                </button>
-            </a>
-            <a href="https://twitter.com/intent/tweet?text=Check%20out% 20this%20awesome%20VSLM%20calculator!%0A%0Awww.vlsm-calculator.com" target="_blank">
-                <button class="shareButton" id="twitterShareButton">
-                    <i class="fab fa-twitter"></i>
-                </button>
-            </a>
-            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.vlsm-calculator.com&title=Check%20out%20this%20awesome%20VSLM%20calculator!" target="_blank">
-                <button class="shareButton" id="redditShareButton">
-                    <i class="fab fa-reddit"></i>
-                </button>
-            </a>
-        </div>
-    </footer>
-    <!-- main script -->
+
     <script src="index.js"></script>
 </body>
+
 </html>

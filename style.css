@@ -1,119 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 * {
-    margin: 0px;
     padding: 0px;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-
-.error {
-    color: red;
-    font-style: italic;
+    margin: 0px;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
+    font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
+}
+
+a:link, a:hover, a:visited {
+    text-decoration: none;
+}
+
+.error {
+    padding-top: 5px;
+    color: red;
+    font-style: italic;
 }
 
 header {
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #f3f3f3;
     min-height: 50px;
 }
 
-h1 {
-    color: #43a58f;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+
+nav a:link {
+    transition: color 0.2s ease;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 15%;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    /* takes all remaining space that 
-     * header and footer don't */
-    flex: 1;
-    margin-top: 30px;
-}
-
-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    flex-grow: 1;
 }
 
 main form {
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
 }
 
-footer {
-    display: flex;
-    height: 50px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f3f3f3;
-    margin-top: 20px;
-}
-
-footer button {
-    min-height: 30px;
-    margin-right: 2px;
-    margin-left: 2px;
-    border-color: #a5a5a5;
-    color: grey;
+main form label {
+    margin: 10px 0px 5px 0px;
 }
 
 input {
-    border: 1px solid rgb(0, 0, 0);
     height: 25px;
     width: 200px;
     padding: 5px;
-    background-color: #f3f3f3;
+}
+
+button:focus {
+    outline: none;
+}
+
+nav button {
+    border: 0px;
+    background-color: transparent;
+    font-size: 20px;
+    transition: color 0.2s ease;
+}
+
+main button {
+    margin-top: 50px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.4s ease;
+    align-self: center;
+}
+
+main button:hover {
+    transform: scale(1.1);
 }
 
 table {
     border-collapse: collapse;
 }
 
-th {
-    color: #43a58f;
-}
-
-td {
-    border: 1px solid black;
-    background-color: #f3f3f3;
-}
-
-button {
-    border: 1px solid black;
-    border-radius: 4px;
-    background-color: #f3f3f3;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #dad6d6;
-}
-
-#subnetInputForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 #subnetInputTable {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 #subnetInputTable input {
@@ -124,167 +110,103 @@ button:hover {
     outline: none;
 }
 
-#calculate {
-    margin-top: 20px;
-    min-width: 100px;
-    min-height: 30px;
+#subnetResultTable {
+    margin-top: 50px;
 }
 
-#resultTable {
-    margin-top: 20px;
-    min-width: 50%; 
-}
-
-#resultTable td {
+#subnetResultTable td {
     min-height: 25px;
     padding: 5px;
 }
 
-#resultTableInfo {
+#subnetResultTableInfo {
     display: none;
     margin-top: 20px;
 }
 
-#resultTableInfo {
-    opacity: 0.55;
+#subnetResultTableInfo {
+    opacity: 0.8;
 }
 
-#resultTableInfo td {
+#subnetResultTableInfo td {
     border: 0px;
     padding: 5px;
 }
 
-#resultTableInfo tr td:first-child {
+#subnetResultTableInfo tr td:first-child {
     font-weight: bold;
-    color: #43a58f;
 }
 
-#leftButtons {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-}
+@media (max-width: 720px)  {
 
-#leftButtons button {
-    min-width: 60px;
-}
-
-#centerButtons {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-#rightButtons {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-#changeDayNightColor {
-    display: flex;
-    padding: 0px 5px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#changeDayNightColor i {
-    padding-left: 5px;
-}
-
-.shareButton {
-    padding: 0px;
-    border: 0px;
-}
-
-.shareButton i {
-    font-size: 30px;
-}
-
-#facebookShareButton i {
-    color: #3b5998;
-}
-
-#twitterShareButton {
-    color: #1da1F2;
-}
-
-#redditShareButton {
-    color: #ff5700;
-}
-
-@media (max-width: 720px) {
-    
-    h1 {
-        font-size: 22px;
-    }
-
-    #subnetInputTable {
-        width: 95%;
-    }
-
-    #subnetInputTable input {
-        box-sizing: border-box;
+    nav {
+        flex-direction: column;
         width: 100%;
     }
 
-    #resultTable {
+    nav ul {
+        width: 50%;
+        padding: 10px 0px;
+    }
+
+    #subnetResultTable {
         width: 90%;
     }
 
-    #resultTable tr {
+    #subnetResultTable tr {
         display: flex;
         flex-direction: column;
         border: 1px solid black;
         margin-bottom: 20px;
     }
 
-    #resultTable tr:first-child {
+    #subnetResultTable tr:first-child {
         display: none;
     }
 
-    #resultTable td {
+    #subnetResultTable td {
         border: 0px;
     }
-
-    #resultTable td::before {
-        color: #43a58f;
+    
+    #subnetResultTable td::before {
         font-weight: bold;
     }
 
-    #resultTable td:nth-child(1)::before {
+    #subnetResultTable td:nth-child(1)::before {
         content: "Subnet: ";
     }
 
-    #resultTable td:nth-child(2)::before {
+    #subnetResultTable td:nth-child(2)::before {
         content: "REQ: ";
     }
 
-    #resultTable td:nth-child(3)::before {
+    #subnetResultTable td:nth-child(3)::before {
         content: "MAX: ";
     }
 
-    #resultTable td:nth-child(4)::before {
+    #subnetResultTable td:nth-child(4)::before {
         content: "Network: ";
     }
 
-    #resultTable td:nth-child(5)::before {
+    #subnetResultTable td:nth-child(5)::before {
         content: "SUFF: ";
     }
 
-    #resultTable td:nth-child(6)::before {
+    #subnetResultTable td:nth-child(6)::before {
         content: "Subnet mask: ";
     }
 
-    #resultTable td:nth-child(7)::before {
+    #subnetResultTable td:nth-child(7)::before {
         content: "First host: ";
     }
 
-    #resultTable td:nth-child(8)::before {
+    #subnetResultTable td:nth-child(8)::before {
         content: "Last host: ";
     }
 
-    #resultTable td:nth-child(9)::before {
+    #subnetResultTable td:nth-child(9)::before {
         content: "Broadcast: ";
     }
 }
+
+

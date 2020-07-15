@@ -1,65 +1,71 @@
-var networkAddressInput = document.getElementById("networkAddress");
+const LIGHT_THEME = 1;
+const DARK_THEME = 0;
+
+var numOfSubnetsInput = document.getElementById("numOfSubnetsInput");
 var subnetInputTable = document.getElementById("subnetInputTable");
-var subnetInputErrorPlace = document.getElementById("subnetInputError");
-var resultTable = document.getElementById("resultTable");
-var resultTableErrorPlace = document.getElementById("resultTableError");
-var resultTableInfoPlace = document.getElementById("resultTableInfo");
-var numOfSubnetsInput = document.getElementById("numOfSubnets");
-var calculateButton = document.getElementById("calculate");
-var changeDayNightColorButton = document.getElementById("changeDayNightColor");
-var currentRow = 0;
+var networkAddressInput = document.getElementById("networkAddressInput");
+var subnetResultTable = document.getElementById("subnetResultTable");
+var currentRows = 0;
+var currentTheme = LIGHT_THEME;
 
-/**
- * Adds a row to the subnet input table.
- * A row contains subnet name cell and a host number cell.
- */
-function addInputTableRow() {
-    let tableRow = subnetInputTable.insertRow();
-    let tableDataName = tableRow.insertCell();
-    let tableDataNumOfHosts = tableRow.insertCell();
 
-    // first cell - subnet name input
+function addRow() {
+    let row = subnetInputTable.insertRow();
+    let subnetNameCell = row.insertCell();
+    let numOfHostsCell = row.insertCell();
+
     let subnetNameInput = document.createElement("input");
+    
     subnetNameInput.type = "text";
     subnetNameInput.className = "subnetNameInput";
-    subnetNameInput.value = "Subnet " + (currentRow + 1).toString();
-    
-    currentRow++;
+    subnetNameInput.value = "Subnet " + (currentRows + 1).toString();
 
-    // second cell - number of hosts input
     let numOfHostsInput = document.createElement("input");
+    
     numOfHostsInput.type = "number";
     numOfHostsInput.className = "numOfHostsInput";
 
-    tableDataName.appendChild(subnetNameInput);
-    tableDataNumOfHosts.appendChild(numOfHostsInput);
+    subnetNameCell.appendChild(subnetNameInput);
+    numOfHostsCell.appendChild(numOfHostsInput);
+
+    currentRows++;
 }
 
-/**
- * Removes a row from the subnet input table
- */
-function removeInputTableRow() {
-    subnetInputTable.deleteRow(currentRow);
-    currentRow--;
+function removeRow() {
+    subnetInputTable.deleteRow(currentRows);
+    currentRows--;
 }
 
-/**
- * Generates subnet input table with the given number of rows.
- * @param {number} numOfSubnets - Number od rows in the subnet input table.
- */
-function generateSubnetInputTable(numOfSubnets) {
+function generateSubnetInputTable() {
+    let numOfSubnets = numOfSubnetsInput.value;
+    
     for (i = 0; i < numOfSubnets; i++) {
-        addInputTableRow();        
+        addRow();
     }
 }
 
-/**
- * Generates a table containing results of the calucalteSubnets function
- * @param {Array<Object>} results - Results of the calculateSubnets function 
- */
+function changeSubnetInputTable() {
+    let numOfSubnets = numOfSubnetsInput.value;
+    let errorSpan = document.getElementById("numOfSubnetsErrorSpan");
+    
+    let rowsBeforeChange = currentRows;
+
+    if (numOfSubnets <= 0) {
+        numOfSubnetsInput.value = 0;
+        errorSpan.innerHTML = "Invalid number of subnets";
+    } else {
+        errorSpan.innerHTML = "";
+        if (numOfSubnets < currentRows) {
+            for (i = 0; i < rowsBeforeChange - numOfSubnets; i++) removeRow();
+        } else if (numOfSubnets > currentRows) {
+            for (i = 0; i < numOfSubnets - rowsBeforeChange; i++) addRow();        
+        }
+    }
+}
+
 function generateResultTable(results) {
-    resultTable.innerHTML = "";
-    let tableHeader = resultTable.insertRow();
+    let subnetResultTableInfo = document.getElementById("subnetResultTableInfo");
+    let tableHeader = subnetResultTable.insertRow();
     let headerElements = ["Subnet", "REQ", "MAX", "Network", 
         "SUFF ", "Subnet mask", "First host", "Last host", "Broadcast"];
     
@@ -70,7 +76,7 @@ function generateResultTable(results) {
     }
 
     for (result of results) {
-        let tableRow = resultTable.insertRow();
+        let tableRow = subnetResultTable.insertRow();
         
         for (prop in result) {
             let tableCell = tableRow.insertCell();
@@ -78,42 +84,15 @@ function generateResultTable(results) {
         }
     }
 
-    resultTableInfoPlace.style.display = "block";
-
+    subnetResultTableInfo.style.display = "block";
 }
 
-/* Adds or removes a table row on subnet number change */
-numOfSubnetsInput.onchange = () => {
-    let numOfSubnets = numOfSubnetsInput.value;
-    let errorSpan = document.getElementById("numOfSubnetsError");
-    rowsBeforeChange = currentRow;
-
-    if (numOfSubnets <= 0) {
-        document.getElementById("numOfSubnets").value = 0;
-        errorSpan.innerHTML = "Invalid number of subnets";
-    } else {
-        errorSpan.innerHTML = "";
-        if (numOfSubnets < currentRow) {
-            for (i = 0; i < rowsBeforeChange - numOfSubnets; i++) {
-                removeInputTableRow();        
-            }
-        } else if (numOfSubnets > currentRow) {
-            for (i = 0; i < numOfSubnets - rowsBeforeChange; i++) {
-                addInputTableRow();        
-            }
-
-            /* Sets the colors of the new rows,
-               the function is located in changeDayNightColor.js */
-            setColor();
-        }
-    }
-}
-
-calculateButton.onclick = () => {
+function generateSubnetResults() {
     let networkAddress = networkAddressInput.value;
+    let errorSpan = document.getElementById("subnetInputErrorSpan");
 
     if(validateIpAddressCIDR(networkAddress) == false) {
-        let errorSpan = document.getElementById("networkAddressError");
+        let errorSpan = document.getElementById("networkAddressErrorSpan");
         errorSpan.innerHTML = "Invalid IPv4 address";
         return;
     }
@@ -123,19 +102,19 @@ calculateButton.onclick = () => {
 
     for (subnetNameInput of subnetNameInputs) {
         if (subnetNameInput.value.length == 0) {
-            subnetInputErrorPlace.innerHTML = "All data in the table must be eneterd!";
+            errorSpan.innerHTML = "All data in the table must be eneterd!";
             return;
         }
     }
 
     for (numOfHostsInput of numOfHostsInputs) {
         if (numOfHostsInput.value <= 0) {
-            subnetInputErrorPlace.innerHTML = "All data in the table must be eneterd!";
+            errorSpan.innerHTML = "All data in the table must be eneterd!";
             return;
         }
     }
 
-    subnetInputErrorPlace.innerHTML = "";
+    errorSpan.innerHTML = "";
 
     let subnetInputData = [];
 
@@ -148,48 +127,27 @@ calculateButton.onclick = () => {
     }
 
     try {
-        resultTableErrorPlace.innerHTML = "";
+        errorSpan.innerHTML = "";
         let results = calculateSubnets(networkAddress, subnetInputData);
         generateResultTable(results);
     } catch (exception) {
-        resultTableErrorPlace.innerHTML = exception;
+        errorSpan.innerHTML = exception;
     }
-
-    /* Bez sljedeceg dijela prilikom generiranja tablice u tamnoj 
-     * temi uzima se bijela pozadinska boja iz css-a (sto nije dobro)*/
-    // ovo treba rijesiti na bolji nacin
-    let tds = document.querySelectorAll("td");
-
-    if (currentColorMode == DARK_MODE) {
-        for(td of tds) {
-            td.style.borderColor = DARK_BORDER;
-            td.style.backgroundColor = DARK_INPUT;
-        }
-    } else {
-        for(td of tds) {
-            td.style.borderColor = "";
-            td.style.backgroundColor = "";
-        }
-    }
-
 }
 
-changeDayNightColorButton.onclick = () => {
-    changeColor();
+function changeTheme() {
+    let themeLink = document.getElementById("theme");
+    
+    switch(currentTheme) {
+        case LIGHT_THEME:
+            themeLink.setAttribute("href", "darkTheme.css");
+            currentTheme = DARK_THEME;
+            break;
+        case DARK_THEME:
+            themeLink.setAttribute("href", "lightTheme.css");
+            currentTheme = LIGHT_THEME;
+            break;
+    }
 }
 
-// Color scheme changes acording to system theme
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    changeColor();
-});
-
-/* Generates input table for the default number of subnets */
-generateSubnetInputTable(numOfSubnetsInput.value);
-
-document.getElementById("englishButton").onclick = () => {
-    changeLanguage(ENGLISH);
-};
-
-document.getElementById("russianButton").onclick = () => {
-    changeLanguage(RUSSIAN);
-};
+generateSubnetInputTable();
