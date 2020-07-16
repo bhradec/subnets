@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-a:link, a:hover, a:visited {
+a {
     text-decoration: none;
 }
 
@@ -33,15 +33,11 @@ nav {
     width: 95%;
 }
 
-nav a:link {
-    transition: color 0.2s ease;
-}
-
 nav ul {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    width: 15%;
+    width: 18%;
 }
 
 main {

@@ -7,7 +7,7 @@ header {
     box-shadow: 0px 0px 10px lightgrey;
 }
 
-body, td, input, i, a:link, a:visited {
+body, td, input, i, a {
     color: #000000;
 }
 
