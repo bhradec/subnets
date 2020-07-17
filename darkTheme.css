@@ -36,6 +36,9 @@ input, td {
 }
 
 @media (max-width: 720px) {
+    #subnetResultTableInfo tr {
+        border-color: #797979;
+    }
 
     #subnetResultTable td::before {
         color: #794f99;
