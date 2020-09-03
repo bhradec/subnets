@@ -157,15 +157,16 @@ table {
 
 @media (max-width: 720px)  {
 
-    nav {
+
+    /* nav {
         flex-direction: column;
         width: 100%;
-    }
+    } 
 
     nav ul {
         width: 50%;
         padding: 10px 0px;
-    }
+    } */
 
     #subnetResultTable {
         width: 90%;
