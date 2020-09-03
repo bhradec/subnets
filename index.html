@@ -4,7 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Easy to use VLSM calculator for finding subnetwork addresses, network masks, broadcast addresses, number of hosts and usable ranges">
+    <meta name="description"
+        content="Easy to use VLSM calculator for finding subnetwork addresses, network masks, broadcast addresses, number of hosts and usable ranges">
     <meta name="keywords" content="VLSM, subnetworking, subnetting, subnet, calculator, ip, ipv4">
     <meta name="author" content="Bruno Hradec, Ivan Luka Špoljar, Antonio Jurešić">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@
                 <li><a href="ipv4.php">IPv4</a></li>
                 <li><a href="ipv6.php">IPv6</a></li>
                 <li><a href="about.php">About</a></li> -->
-                
+
                 <li>
                     <button onclick="changeTheme()">
                         <i class="far fa-lightbulb"></i>
@@ -48,7 +49,8 @@
             <input type="text" name="networkAddressInput" id="networkAddressInput" value="192.168.0.1/24">
             <span id="networkAddressErrorSpan" class="error"></span>
             <label for="numOfSubnetsInput">Number of subnets:</label>
-            <input type="number" name="numOfSubnetsInput" id="numOfSubnetsInput" value="5" onchange="changeSubnetInputTable();">
+            <input type="number" name="numOfSubnetsInput" id="numOfSubnetsInput" value="5"
+                onchange="changeSubnetInputTable();">
             <span id="numOfSubnetsErrorSpan" class="error"></span>
         </form>
 
@@ -62,7 +64,7 @@
         <span id="subnetInputErrorSpan" class="error"></span>
 
         <button type="button" onclick="generateSubnetResults()">Calculate</button>
-        
+
         <!-- Rest of the table is generated in index.js -->
         <table id="subnetResultTable"></table>
 
