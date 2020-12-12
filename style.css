@@ -59,7 +59,6 @@ main form label {
 
 input {
     height: 25px;
-    width: 200px;
     padding: 5px;
 }
 
@@ -156,17 +155,6 @@ table {
 }
 
 @media (max-width: 720px)  {
-
-
-    /* nav {
-        flex-direction: column;
-        width: 100%;
-    } 
-
-    nav ul {
-        width: 50%;
-        padding: 10px 0px;
-    } */
 
     #subnetResultTable {
         width: 90%;
