@@ -132,29 +132,20 @@ table {
     font-weight: bold;
 }
 
-#about span {
-    display: block;
-    padding-top: 10px;
-}
-
-#about article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    width: 50%;
-}
-
-#about #warning {
-    color: red;
-}
-
-#about #email {
-    font-size: 40px;
-    color: #007fff;
+#themeIcon {
+    width: 30px;
+    height: 30px;
 }
 
 @media (max-width: 720px)  {
+
+    #subnetInputTable {
+        width: 95%;
+    }
+
+    #subnetInputTable input {
+        width: 100%;
+    }
 
     #subnetResultTable {
         width: 90%;
